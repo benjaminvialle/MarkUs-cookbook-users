@@ -20,6 +20,6 @@
 # Empty default recipe for including LWRPs.
 
 # in order to use the password method in Chef
-package "libshadow-ruby" do
+package "ruby-shadow" do
   action :upgrade
 end
