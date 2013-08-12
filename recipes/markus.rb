@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+include_recipe "users::default"
+
 markus_group = Array.new
 
 search(:users, 'groups:markus') do |u|
