@@ -68,7 +68,6 @@ search(:users, 'groups:markus') do |u|
     owner u['id']
     group u['gid'] || u['id']
     mode "0644"
-    variables(:path => "/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}
-              :/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}/bin")
+    variables(:path => "/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}:/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}/bin")
   end
 end
