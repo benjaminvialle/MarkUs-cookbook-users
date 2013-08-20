@@ -62,4 +62,13 @@ search(:users, 'groups:markus') do |u|
     mode "0644"
     variables(:color => "CLR_BBLUE")
   end
+
+  template "#{home_dir}/.profile" do
+    source "dotprofile.erb"
+    owner u['id']
+    group u['gid'] || u['id']
+    mode "0644"
+    variables(:path => "/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}
+              :/home/#{u['id']}/.rubies/#{node[:markus][:ruby_version]}/bin")
+  end
 end
